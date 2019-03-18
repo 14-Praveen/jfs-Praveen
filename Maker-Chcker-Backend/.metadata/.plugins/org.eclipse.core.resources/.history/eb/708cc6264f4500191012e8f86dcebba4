@@ -1,0 +1,12 @@
+package com.domain.repository;
+
+import org.springframework.data.repository.Repository;
+import org.springframework.stereotype.Service;
+import com.domain.entity.Customer;
+
+@Service
+public interface CustomerRepository extends Repository <Customer, String>{
+	
+	List <Customer> findAll(); 
+	
+}

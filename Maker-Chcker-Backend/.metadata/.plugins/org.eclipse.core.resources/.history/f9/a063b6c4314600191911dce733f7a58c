@@ -1,0 +1,23 @@
+server.contextPath=/maker-checker
+server.port=8087
+
+#PostGres Datasource
+spring.datasource.url=jdbc:postgresql://localhost:5432/Maker-Checker
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+
+#Oracle Datasource
+spring.datasource.url=jdbc:oracle:thin:@localhost:1521/xe
+spring.datasource.username=PROJECT_SPACE
+spring.datasource.password=Oracle123
+spring.datasource.driver-class-name=oracle.jdbc.driver.OracleDriver
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.properties.hibernate.temp.use_jdbc_metadata_defaults=false
+
+
+

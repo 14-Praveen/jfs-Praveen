@@ -1,0 +1,13 @@
+package com.domain.service;
+
+import org.springframework.stereotype.Service;
+
+import com.domain.entity.User;
+
+@Service
+public interface LoginService {
+
+	User authenticateUser(String uid, String password);
+	
+	
+}

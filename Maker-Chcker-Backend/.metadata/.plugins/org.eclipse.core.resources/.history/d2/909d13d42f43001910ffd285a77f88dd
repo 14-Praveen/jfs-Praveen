@@ -1,0 +1,27 @@
+package com.domain.service;
+
+import com.domain.entity.User;
+import com.domain.repository.UserRepository;
+
+public class LoginServiceImpl implements LoginService{
+
+	UserRepository userRepository;
+	String role;
+@Override 
+public User authenticateUser(String id, String password){
+		
+	 User user = userRepository.findOne(id);
+	 
+	 if (password.equals(user.getUl_password()))
+	 {
+		 System.out.println("Successful Authentication");
+		 if (user.getUl_role() == 1){role = "Checker"}else {role = "Maker"}
+		 System.out.println("Logged in as "+role);
+	 }else{
+		 System.out.println("Invalid Authentication");
+}
+	 
+	 return user;
+	}
+
+}

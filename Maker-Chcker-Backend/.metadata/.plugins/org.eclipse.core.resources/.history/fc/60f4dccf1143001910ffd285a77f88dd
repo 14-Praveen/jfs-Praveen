@@ -1,0 +1,17 @@
+package com.domain.service;
+
+import com.domain.entity.User;
+import com.domain.repository.UserRepository;
+
+public class LoginServiceImpl implements LoginService{
+
+	UserRepository userRepository;
+@Override 
+public User authenticateUser(int id, String password){
+		
+	 User user = userRepository.authenticateUser(id);
+	 
+	 return user;
+	}
+
+}

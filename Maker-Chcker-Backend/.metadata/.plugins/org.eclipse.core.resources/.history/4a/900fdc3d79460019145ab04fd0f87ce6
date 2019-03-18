@@ -1,0 +1,32 @@
+package com.domain.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.domain.entity.Customer;
+import com.domain.repository.CustomerRepository;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+	
+	@Autowired
+	CustomerRepository custRepository;
+	
+	@Override
+	public List<Customer> getFormList() {
+		System.out.println("In CustomerServiceImpl.getFormList");
+//		List<Customer> outdata = custRepository.findAll();
+		return custRepository.findAll();
+		
+	}
+
+	@Override
+	public Customer createForm(Customer formData) {
+		 System.out.println("In CustomerServiceImpl.createForm");
+
+		return custRepository.save(formData);
+	}
+
+}

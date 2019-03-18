@@ -1,0 +1,8 @@
+package com.domain.repository;
+
+import org.springframework.data.repository.Repository;
+import com.domain.entity.Customer;
+
+public interface CustomerRepository extends Repository <Customer, String>{
+	
+}

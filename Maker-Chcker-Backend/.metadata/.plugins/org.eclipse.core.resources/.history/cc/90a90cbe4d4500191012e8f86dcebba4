@@ -1,0 +1,11 @@
+package com.domain.service;
+
+import org.springframework.stereotype.Service;
+import com.domain.entity.Customer;
+
+
+public interface CustomerService {
+
+	Customer getFormList();
+	
+}

@@ -1,0 +1,28 @@
+package com.domain.entity;
+
+
+public class Customer {
+
+	 int custId;
+String custCode;
+String custName;
+String custAddress;
+int custPincode;
+String custEmail;
+int custContact;
+String custPrimContact;
+String formStatus;
+String actInact;
+//date createdDate;
+String createdBy;
+//date modifiedDate;  
+String modifiedBy;
+//date authorizedDate;
+String authorizedBy;
+		
+}
+
+
+
+
+

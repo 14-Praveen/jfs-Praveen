@@ -1,0 +1,16 @@
+package com.domain.service;
+
+import org.springframework.stereotype.Service;
+
+import com.domain.entity.Customer;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+
+	@Override
+	public Customer getFormList() {
+
+		return null;
+	}
+
+}

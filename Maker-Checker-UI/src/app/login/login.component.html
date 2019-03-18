@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+
+    <!-- <div class="col-md-6 col-md-offset-2"> -->
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+        <div class="col-md-6">
+<br><br>
+          <table class="center" width="300" border="0" align="center" cellspacing="5" bordercolor="#780C47" bgcolor="#C9C9D2">
+            <th> <h3><div align="center">Maker-Checker Login Page </div></h3></th>
+             <tr><td><div class="form-group" align="center">
+                <input  type="text" [(ngModel)]="username"   class="form-control"  formControlName="username"   placeholder="Enter username"   required="" />
+                </div></td></tr>
+
+              <tr><td><div class="form-group" align="center">
+                <input  type="password"  [(ngModel)]="password"   class="form-control"  formControlName="password"   placeholder="Enter password"    required="" />
+              </div></td></tr>
+
+            <tr><td><div class="form-group" align="center">
+                <button type="submit"  class="btn btn-success">Login</button>
+                <!-- <span class="text-danger">{{ error }}</span> -->
+              </div></td></tr>
+            </table>
+        </div>
+      </form>
+    <!-- </table> -->
+    <!-- </div> -->

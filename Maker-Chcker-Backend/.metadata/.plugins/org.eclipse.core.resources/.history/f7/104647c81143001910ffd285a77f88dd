@@ -1,0 +1,10 @@
+package com.domain.service;
+
+import com.domain.entity.User;
+
+public interface LoginService {
+
+	User authenticateUser(int id, String password);
+	
+	
+}

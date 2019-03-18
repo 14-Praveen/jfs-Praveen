@@ -1,0 +1,10 @@
+server.contextPath=/maker-checker
+server.port=8090
+
+#PostGres Datasource
+spring.datasource.url=jdbc:postgresql://localhost:5432/Maker-Checker
+spring.datasource.username=postgres
+spring.datasource.password=postgres
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.show-sql=true
+spring.jpa.hibernate.ddl-auto=update

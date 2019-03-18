@@ -1,0 +1,24 @@
+package com.domain.service;
+
+import com.domain.entity.User;
+import com.domain.repository.UserRepository;
+
+public class LoginServiceImpl implements LoginService{
+
+	UserRepository userRepository;
+@Override 
+public User authenticateUser(String id, String password){
+		
+	 User user = userRepository.findOne(id);
+	 
+	 if (password.equals(user.getUl_password()))
+	 {
+		 System.out.println("Successful Authentication");
+	 }else{
+		 System.out.println("Invalid Authentication");
+}
+	 
+	 return user;
+	}
+
+}

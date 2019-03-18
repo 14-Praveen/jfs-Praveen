@@ -1,0 +1,40 @@
+package com.domain.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "user_login")
+public class User {
+
+    @Id
+    @Column (name = "ul_user_id")
+    private String uid;
+    @Column (name = "ul_password")
+    private String password;
+    @Column (name = "ul_role")
+    private int role;
+
+	public String getUid() {
+		return uid;
+	}
+	public void setUid(String uid) {
+		this.uid = uid;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public int getRole() {
+		return role;
+	}
+	public void setRole(int role) {
+		this.role = role;
+	}
+    
+	
+}

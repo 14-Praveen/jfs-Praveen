@@ -1,0 +1,30 @@
+package com.domain.service;
+
+import org.springframework.stereotype.Service;
+
+import com.domain.entity.User;
+import com.domain.repository.UserRepository;
+
+@Service
+public class LoginServiceImpl implements LoginService{
+
+	UserRepository userRepository;
+	String role;
+@Override 
+public User authenticateUser(String uid, String password){
+		
+	 User user = userRepository.findOne(uid);
+	 
+	 if (password.equals(user.getPassword()))
+	 {
+		 System.out.println("Successful Authentication");
+		 if (user.getRole() == 1){role = "Checker";} else {role = "Maker";}
+		 System.out.println("Logged in as " +role);
+	 }else{
+		 System.out.println("Invalid Authentication");
+}
+	 
+	 return user;
+	}
+
+}

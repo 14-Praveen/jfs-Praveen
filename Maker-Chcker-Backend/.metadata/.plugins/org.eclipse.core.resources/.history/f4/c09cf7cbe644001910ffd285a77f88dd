@@ -1,0 +1,9 @@
+package com.domain.service;
+
+import com.domain.entity.Customer;
+@Service
+public interface CustomerService {
+
+	Customer getFormList();
+	
+}

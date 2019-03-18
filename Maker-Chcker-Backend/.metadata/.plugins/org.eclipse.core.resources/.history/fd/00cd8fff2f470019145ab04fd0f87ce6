@@ -1,0 +1,157 @@
+package com.domain.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "CUSTOMER_TEMP")
+
+public class Customer {
+	
+	@Id
+	@Column (name ="CM_CUSTOMER_ID")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int custId;
+	@Column (name ="CM_CUSTOMER_CODE")
+	String custCode;
+	@Column (name = "CM_CUSTOMER_NAME")
+	String custName;
+	@Column (name = "CM_CUSTOMER_ADDRESS1")
+	String custAddress1;
+	@Column (name = "CM_CUSTOMER_ADDRESS2")
+	String custAddress2;
+	@Column (name = "CM_CUSTOMER_PINCODE")
+	int custPincode;
+	@Column (name = "CM_CUSTOMER_EMAIL")
+	String custEmail;
+	@Column (name = "CM_CUSTOMER_CONTACT")
+	int custContact;
+	@Column (name = "CM_PRIM_CONTACT_PERSON")
+	String custPrimContact;
+	@Column (name = "CM_RECORD_STATUS")
+	String formStatus;
+	@Column (name = "CM_ACTIVE_INACTIVE")
+	String actInact;
+	@Column (name = "CM_CREATED_DATE")
+	Date createdDate;
+	@Column (name = "CM_CREATED_BY")
+	String createdBy;
+	@Column (name = "CM_MODIFIED_DATE")
+	Date modifiedDate;
+	@Column (name = "CM_MODIFIED_BY")
+	String modifiedBy;
+	@Column (name = "CM_AUTHORIZED_DATE")
+	Date authorizedDate;
+	@Column (name = "CM_AUTHORIZED_BY")
+	String authorizedBy;
+
+	public int getCustId() {
+		return custId;
+	}
+	public void setCustId(int custId) {
+		this.custId = custId;
+	}
+	public String getCustCode() {
+		return custCode;
+	}
+	public void setCustCode(String custCode) {
+		this.custCode = custCode;
+	}
+	public String getCustName() {
+		return custName;
+	}
+	public void setCustName(String custName) {
+		this.custName = custName;
+	}
+	public String getCustAddress1() {
+		return custAddress1;
+	}
+	public void setCustAddress1(String custAddress1) {
+		this.custAddress1 = custAddress1;
+	}
+	public String getCustAddress2() {
+		return custAddress2;
+	}
+	public void setCustAddress2(String custAddress2) {
+		this.custAddress2 = custAddress2;
+	}
+	public int getCustPincode() {
+		return custPincode;
+	}
+	public void setCustPincode(int custPincode) {
+		this.custPincode = custPincode;
+	}
+	public String getCustEmail() {
+		return custEmail;
+	}
+	public void setCustEmail(String custEmail) {
+		this.custEmail = custEmail;
+	}
+	public int getCustContact() {
+		return custContact;
+	}
+	public void setCustContact(int custContact) {
+		this.custContact = custContact;
+	}
+	public String getCustPrimContact() {
+		return custPrimContact;
+	}
+	public void setCustPrimContact(String custPrimContact) {
+		this.custPrimContact = custPrimContact;
+	}
+	public String getFormStatus() {
+		return formStatus;
+	}
+	public void setFormStatus(String formStatus) {
+		this.formStatus = formStatus;
+	}
+	public String getActInact() {
+		return actInact;
+	}
+	public void setActInact(String actInact) {
+		this.actInact = actInact;
+	}
+	public Date getCreatedDate() {
+		return createdDate;
+	}
+	public void setCreatedDate(Date createdDate) {
+		this.createdDate = createdDate;
+	}
+	public String getCreatedBy() {
+		return createdBy;
+	}
+	public void setCreatedBy(String createdBy) {
+		this.createdBy = createdBy;
+	}
+	public Date getModifiedDate() {
+		return modifiedDate;
+	}
+	public void setModifiedDate(Date modifiedDate) {
+		this.modifiedDate = modifiedDate;
+	}
+	public String getModifiedBy() {
+		return modifiedBy;
+	}
+	public void setModifiedBy(String modifiedBy) {
+		this.modifiedBy = modifiedBy;
+	}
+	public Date getAuthorizedDate() {
+		return authorizedDate;
+	}
+	public void setAuthorizedDate(Date authorizedDate) {
+		this.authorizedDate = authorizedDate;
+	}
+	public String getAuthorizedBy() {
+		return authorizedBy;
+	}
+	public void setAuthorizedBy(String authorizedBy) {
+		this.authorizedBy = authorizedBy;
+	}
+	
+	}

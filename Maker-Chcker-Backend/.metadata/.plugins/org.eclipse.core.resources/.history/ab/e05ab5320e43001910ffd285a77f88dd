@@ -1,0 +1,6 @@
+package com.domain.repository;
+
+public interface UserRepository extends Repository <User, Integer>{
+
+	User userAuthenticate()
+}

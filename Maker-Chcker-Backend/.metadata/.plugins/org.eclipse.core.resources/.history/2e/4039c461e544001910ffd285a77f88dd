@@ -1,0 +1,52 @@
+package com.domain.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "customer_master")
+
+public class Customer {
+	
+	@Id
+	@Column
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int custId;
+	@Column
+	String custCode;
+	@Column
+	String custName;
+	@Column
+	String custAddress;
+	@Column
+	int custPincode;
+	@Column
+	String custEmail;
+	@Column
+	int custContact;
+	@Column
+	String custPrimContact;
+	@Column
+	String formStatus;
+	@Column
+	String actInact;
+	//date createdDate;
+	@Column
+	String createdBy;
+	//date modifiedDate;
+	@Column
+	String modifiedBy;
+	//date authorizedDate;
+	@Column
+	String authorizedBy;
+		
+}
+
+
+
+
+

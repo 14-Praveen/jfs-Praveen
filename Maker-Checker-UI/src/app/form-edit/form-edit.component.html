@@ -1,0 +1,58 @@
+<span class= "border border-primary"></span>
+    <h2>Edit Form</h2>
+    <div class="p-3 mb-2 bg-gradient-secondary text-black">
+      <form [formGroup]="editForm" (ngSubmit)="onFormSubmit()">
+    <div class="col-md-6">
+
+      <div class="form-group">
+        <label for="custCode">CUSTOMER CODE:</label>
+        <input type="text" [(ngModel)]='custCode' class="form-control" formControlName="custCode" placeholder="customer code" required=""/>
+        <!-- <input type="text" formControlName="custCode" placeholder="custCode" name="custCode" class="form-control" id="custCode"> -->
+      </div>
+
+      <div class="form-group">
+          <label for="custName">CUSTOMER NAME:</label>
+        <input type="text"  [(ngModel)]='custName' class="form-control" formControlName="custName" placeholder="custName" required=""/>
+      </div>
+
+      <div class="form-group">
+          <label for="custAddress1">CUSTOMER ADDRESS1:</label>
+          <input type="text" [(ngModel)]='custAddress1' class="form-control" formControlName="custAddress1" placeholder="custAddress1" required=""/>
+        </div>
+
+      <div class="form-group">
+            <label for="custAddress2">CUSTOMER ADDRESS2:</label>
+            <input type="text" [(ngModel)]='custAddress2' class="form-control" formControlName="custAddress2" placeholder="custAddress2" required=""/>
+          </div>
+
+      <div class="form-group">
+              <label for="custPincode">CUSTOMER PINCODE:</label>
+              <input type="text" [(ngModel)]='custPincode' class="form-control" formControlName="custPincode" placeholder="custPincode" required=""/>
+            </div>
+
+      <div class="form-group">
+                <label for="custEmail">CUSTOMER EMAIL:</label>
+                <input type="text" [(ngModel)]='custEmail' class="form-control" formControlName="custEmail" placeholder="custEmail" required=""/>
+              </div>
+
+      <div class="form-group">
+                  <label for="custContact">CUSTOMER CONTACT:</label>
+                  <input type="text" [(ngModel)]='custContact' class="form-control" formControlName="custContact" placeholder="custContact" required=""/>
+                </div>
+
+      <div class="form-group">
+                    <label for="custPrimContact">PRIMARY CONTACT PERSON:</label>
+                    <input type="text" [(ngModel)]='custPrimContact' class="form-control" formControlName="custPrimContact" placeholder="custPrimContact" required=""/>
+                  </div>
+
+      <div class="form-group">
+        <button *ngIf="currentRole=='Maker'" type="submit" class="btn btn-success" >Update</button>
+        <button *ngIf="currentRole=='Checker'" class="btn btn-success" (click)="formStatus('approve')"> Approve</button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button *ngIf="currentRole=='Checker'" class="btn btn-danger" (click)="formStatus('reject')"> Reject</button>
+        <!-- <span class="text-danger">{{ error }}</span> -->
+      </div>
+
+    </div>
+  </form>
+  </div>
+

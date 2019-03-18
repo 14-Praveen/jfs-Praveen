@@ -1,0 +1,21 @@
+package com.domain.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.domain.entity.Customer;
+import com.domain.repository.CustomerRepository;
+
+@Service
+public class CustomerServiceImpl implements CustomerService {
+	
+	@Autowired
+	CustomerRepository custRepository;
+	
+	@Override
+	public Customer getFormList() {
+
+		return null;
+	}
+
+}

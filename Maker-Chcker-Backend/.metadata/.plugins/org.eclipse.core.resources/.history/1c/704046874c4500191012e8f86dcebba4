@@ -1,0 +1,13 @@
+package com.domain.service;
+
+import com.domain.entity.Customer;
+
+public class CustomerServiceImpl implements CustomerService {
+
+	@Override
+	public Customer getFormList() {
+
+		return null;
+	}
+
+}
