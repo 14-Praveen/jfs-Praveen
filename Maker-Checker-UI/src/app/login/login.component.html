@@ -1,27 +1,23 @@
-<!DOCTYPE html>
+<div class="col-md-6 col-md-offset-3">
 
-
-    <!-- <div class="col-md-6 col-md-offset-2"> -->
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-        <div class="col-md-6">
-<br><br>
-          <table class="center" width="300" border="0" align="center" cellspacing="5" bordercolor="#780C47" bgcolor="#C9C9D2">
-            <th> <h3><div align="center">Maker-Checker Login Page </div></h3></th>
-             <tr><td><div class="form-group" align="center">
-                <input  type="text" [(ngModel)]="username"   class="form-control"  formControlName="username"   placeholder="Enter username"   required="" />
-                </div></td></tr>
-
-              <tr><td><div class="form-group" align="center">
-                <input  type="password"  [(ngModel)]="password"   class="form-control"  formControlName="password"   placeholder="Enter password"    required="" />
-              </div></td></tr>
-
-            <tr><td><div class="form-group" align="center">
-                <button type="submit"  class="btn btn-success">Login</button>
-                <!-- <span class="text-danger">{{ error }}</span> -->
-              </div></td></tr>
-            </table>
-        </div>
-      </form>
-    <!-- </table> -->
-    <!-- </div> -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" role="form">
+        <table class="center" align= "center">
+            <tr><td><div class="form-actions"  align="center"> <h3>Maker-Checker Login</h3></div></td></tr><br>
+          <tr><td><div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Username *</label>
+            <input type="text" name="username" id="username" class="form-control" [(ngModel)]="username" formControlName="username" required />
+            <!-- <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span> -->
+        </div></td></tr>
+        <tr><td><div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password *</label>
+            <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" formControlName="password" required />
+            <!-- <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span> -->
+        </div></td></tr>
+      <tr><td><div class="form-actions"  align="center">
+            <button type="submit" class="btn btn-primary">Login</button>
+            <!-- <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> -->
+            <!-- <a href="#!/register" class="btn btn-link">Register</a> -->
+        </div></td></tr>
+      </table>
+    </form>
+</div>

@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <span class= "border border-primary"></span>
     <h2>Edit Form</h2>
     <div class="p-3 mb-2 bg-gradient-secondary text-black">
@@ -46,9 +47,9 @@
                   </div>
 
       <div class="form-group">
-        <button *ngIf="currentRole=='Maker'" type="submit" class="btn btn-success" >Update</button>
-        <button *ngIf="currentRole=='Checker'" class="btn btn-success" (click)="formStatus('approve')"> Approve</button> &nbsp;&nbsp;&nbsp;&nbsp;
-        <button *ngIf="currentRole=='Checker'" class="btn btn-danger" (click)="formStatus('reject')"> Reject</button>
+        <button *ngIf="currentRole=='Maker'" type="submit" class="btn btn-success"> <i class="glyphicon glyphicon-ok-circle"></i> Update </button>
+        <button *ngIf="currentRole=='Checker'" class="btn btn-success" (click)="formApprove()"><i class="glyphicon glyphicon-ok-circle"></i> Approve </button> &nbsp;&nbsp;&nbsp;&nbsp;
+        <button *ngIf="currentRole=='Checker'" class="btn btn-danger" (click)="formReject()"><i class="glyphicon glyphicon-ban-circle"></i> Reject</button>
         <!-- <span class="text-danger">{{ error }}</span> -->
       </div>
 

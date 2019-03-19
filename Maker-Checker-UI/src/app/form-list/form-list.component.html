@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 <title>Customer Form Details</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 <body>
 <div >
-<table class="table table-striped"><tr>
-<td><h2> Customer Form Details </h2></td>
-<td><h3>Logged in as {{currentRole}}</h3></td>
-<td><button class="btn btn-warning" (click)="logOut()"> Logout <i class="fa fa-user" ></i></button></td> </tr> </table>
-  <table class="table table-striped" >
+<table class="table table-striped">
+  <tr><td><h3>Logged in as {{currentRole}}</h3></td>
+  <td><h2> Customer Form Details </h2></td>
+  <td align=right><button class="btn btn-danger" (click)="logOut()"><i class="glyphicon glyphicon-off" ></i> Logout </button>
+  </td> </tr> </table></div>
+
+  <div><table class="table table-striped" >
     <thead class="btn-success">
     <tr>
       <th class="hidden">Customer ID</th>
@@ -30,6 +34,9 @@
       <th>Modified By</th>
       <th>Authorized Date</th>
       <th>Authorized By</th>
+      <th *ngIf="currentRole=='Maker'">Edit</th>
+      <th *ngIf="currentRole=='Maker'">Delete</th>
+      <th *ngIf="currentRole=='Checker'">Open</th>
     </tr>
     </thead>
     <tbody>
@@ -43,24 +50,23 @@
       <td>{{fdata.custContact}}</td>
       <td>{{fdata.custPrimContact}}</td>
       <td>{{fdata.formStatus}}</td>
-      <td>{{fdata.actInact}}</td>
-      <td>{{fdata.createdDate | date: 'dd-MMM-yyyy hh:mm:ss'}}</td>
+      <td>{{fdata.actInact}} </td>
+      <td>{{fdata.createdDate | date: 'dd-MMM-yyyy'}}</td>
       <td>{{fdata.createdBy}}</td>
-      <td>{{fdata.modifiedDate | date: 'dd-MMM-yyyy hh:mm:ss'}}</td>
+      <td>{{fdata.modifiedDate | date: 'dd-MMM-yyyy'}}</td>
       <td>{{fdata.modifiedBy}}</td>
-      <td>{{fdata.authorizedDate | date: 'dd-MMM-yyyy hh:mm:ss'}}</td>
+      <td>{{fdata.authorizedDate | date: 'dd-MMM-yyyy'}}</td>
       <td>{{fdata.authorizedBy}}</td>
 
-      <td><button *ngIf="currentRole=='Maker'" class="btn btn-warning" (click)="editForm(fdata)">Edit <i class="fa fa-edit" ></i></button>
-        <button *ngIf="currentRole=='Maker'" class="btn btn-danger" (click)="deleteForm(fdata)"> Delete <i class="fa fa-trash" ></i></button>
-        <button *ngIf="currentRole=='Checker'" class="btn btn-success" (click)="openForm(fdata)"> Open</button>
-      </td>
+      <td><button *ngIf="currentRole=='Maker'" class="btn btn-warning" (click)="editForm(fdata)"> <i class="fa fa-edit" ></i></button></td>
+      <td><button *ngIf="currentRole=='Maker'" class="btn btn-danger" (click)="deleteForm(fdata)"><i class="fa fa-trash" ></i> </button></td>
+      <td><button *ngIf="currentRole=='Checker'" class="btn btn-info" (click)="openForm(fdata)"><i class="fa fa-file"></i> </button></td>
     </tr>
     </tbody>
   </table>
 
   <div class="container" *ngIf="currentRole=='Maker'">
-    <button class="btn btn-success" (click)="addForm()"> Add Form</button></div>
+    <button class="btn btn-success" (click)="addForm()"><i class="glyphicon glyphicon-plus"></i> Add </button></div>
 </div>
 
 </body>

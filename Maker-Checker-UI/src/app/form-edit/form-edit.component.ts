@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormService } from '../service/form.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import {first} from "rxjs/operators";
+import {first} from 'rxjs/operators';
 
 @Component({
   selector: 'app-form-edit',
@@ -17,10 +17,11 @@ export class FormEditComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router, private formService: FormService) { }
 
   ngOnInit() {
-    let formId = localStorage.getItem('editFormId');
+
+    const formId = localStorage.getItem('editFormId');
     this.currentRole = localStorage.getItem('currRole');
-    if(!formId) {
-      alert("Invalid action!");
+    if (!formId) {
+      alert('Invalid action!');
       this.router.navigate(['form-list']);
       return;
     }
@@ -51,15 +52,15 @@ export class FormEditComponent implements OnInit {
 
   onFormSubmit() {
     // console.log('check flag ' );
-    if (localStorage.getItem('flag') !== 'YES'){
+    if (localStorage.getItem('flag') !== 'YES') {
     this.editForm.value.formStatus = 'M';
-    this.editForm.value.actInact = 'I';
+    this.editForm.value.actInact = 'A';
     this.editForm.value.modifiedBy = localStorage.getItem('username');
     this.editForm.value.modifiedDate = new Date();
     }
+    localStorage.setItem('flag', 'NO');
+    // localStorage.removeItem('flag');
     // console.log('final !!!' );
-    // this.flag = false;
-    localStorage.removeItem('flag');
     this.formService.updateForm(this.editForm.value).pipe(first()).subscribe(
         data => {
           this.router.navigate(['form-list']);
@@ -67,25 +68,24 @@ export class FormEditComponent implements OnInit {
         error => {
           alert(error);
         });
-
   }
 
-  formStatus(approve: string){
+  formApprove() {
+  // console.log('approve ' + this.editForm.value.custId );
   localStorage.setItem('flag', 'YES');
-  // this.flag = true;
-  if(!approve.match('approve')) {
-    // console.log('reject ' );
-    this.editForm.value.formStatus = 'R';
-    this.editForm.value.actInact = 'I';
-  } else {
-    // console.log('approve' );
   this.editForm.value.formStatus = 'A';
   this.editForm.value.actInact = 'A';
   this.editForm.value.authorizedBy = localStorage.getItem('username');
   this.editForm.value.authorizedDate = new Date();
+  this.onFormSubmit();
   }
 
-  this.onFormSubmit();
+  formReject() {
+  // console.log('reject ' + this.editForm.value.custId );
+  localStorage.setItem('flag', 'YES');
+  this.editForm.value.formStatus = 'R';
+  this.editForm.value.actInact = 'I';
+
   }
 
 }

@@ -31,6 +31,7 @@ export class FormListComponent implements OnInit {
 
   editForm(formData: FormData): void {
     localStorage.removeItem('editFormId');
+    console.log('custId '+formData.custId.toString());
     localStorage.setItem('editFormId', formData.custId.toString());
     this.router.navigate(['form-edit']);
   }

@@ -42,6 +42,7 @@ onSubmit() {
         localStorage.removeItem('username');
         localStorage.setItem('currRole', this.currentRole);
         localStorage.setItem('username', this.username);
+        localStorage.setItem('flag', 'NO');
         this.router.navigate(['form-list']);
       });
 
